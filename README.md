@@ -1,5 +1,5 @@
 # User Profiles II
-### Understanding Services
+### Understanding Services with $http
 The first time we created this app we did it using fake data located in our service. In this repo we will use a live API instead and hit it using $http, or AJAX.
 
 In this repository, we have created the usersProfile app based on the instructions found [here](https://github.com/devmountain/mini-userProfiles). 
