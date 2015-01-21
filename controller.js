@@ -9,6 +9,7 @@ app.controller('MainController', function($scope, mainService) {
     console.log($scope.users);
   }
 
+
   $scope.getUsers();
 
 });
