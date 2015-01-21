@@ -1,4 +1,4 @@
-var app = angular.module('userProfiles');
+var app = angular.module('userProfiles'); //wow
 
 app.service('mainService', function($http) {
 
