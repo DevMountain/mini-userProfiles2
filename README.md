@@ -105,3 +105,7 @@ All we are doing here is calling the mainService.getUsers function, and saying t
 The response is a giant JSON object that contains a lot of information we don't necessarily need right now. That's why $scope.users is equal to response.data.data. Data is a child of response, and it has a child named data. The second child named data is where our user profile information lives. 
 
 If all goes well we should get the same response in our HTML file and not have to manipulate our view at all.
+
+## Copyright
+
+© DevMountain LLC, 2016. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
