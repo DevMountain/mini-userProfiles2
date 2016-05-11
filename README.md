@@ -34,9 +34,7 @@ In the real world, we won't be storing data in our files at all. This is what da
 - Remove the data variable from the code so that our service looks like this:
 
 ``` javascript
-var app = angular.module('userProfiles');
-
-app.service('mainService', function() {
+angular.module('userProfiles').service('mainService', function() {
   this.getUsers = function() {
     return data;
   }
@@ -46,9 +44,7 @@ app.service('mainService', function() {
 - Now we need to inject $http into our service, and replace our getUsers method with a getUsers AJAX request
 
 ``` javascript
-var app = angular.module('userProfiles');
-
-app.service('mainService', function($http) {
+angular.module('userProfiles').service('mainService', function($http) {
   this.getUsers = function() {
     return $http({
       method: 'GET',
@@ -72,9 +68,7 @@ Now that our service is making a real life - grown up GET request our controller
 Here is what our controller currently looks like:
 
 ``` javascript
-var app = angular.module('userProfiles');
-
-app.controller('MainController', function($scope, mainService) {
+angular.module('userProfiles').controller('MainController', function($scope, mainService) {
   $scope.getUsers = function() {
     $scope.users = mainService.getUsers();
   }
@@ -88,9 +82,7 @@ What we need to do is implement a promise! A promise will keep Angular from jump
 
 - Replace the old getUsers method with a new one which has a promise!
 ``` javascript
-var app = angular.module('userProfiles');
-
-app.controller('MainController', function($scope, mainService) {
+angular.module('userProfiles').controller('MainController', function($scope, mainService) {
   $scope.getUsers = function() {
     mainService.getUsers().then(function(response) {
       $scope.users = response.data.data;
