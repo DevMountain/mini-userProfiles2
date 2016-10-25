@@ -9,19 +9,19 @@ Our service has all this data inside of it:
 ``` javascript
   [
     {
-        "id": 1,
+        "id": 0,
         "first_name": "george",
         "last_name": "bluth",
         "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
     },
     {
-        "id": 2,
+        "id": 1,
         "first_name": "lucille",
         "last_name": "bluth",
         "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
     },
     {
-        "id": 3,
+        "id": 2,
         "first_name": "oscar",
         "last_name": "bluth",
         "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
@@ -29,7 +29,7 @@ Our service has all this data inside of it:
   ]
 ```
 
-In the real world, we won't be storing data in our files at all. This is what databases are for. Instead, our Angular app makes requests to web servers which go and fetch the data. We will do that by using the built in Angular service of $http. $http is a service that makes AJAX requests to APIs. With Ajax, Web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. AJAX is super important to web development. Let's remove our data and replace it with an  request. 
+In the real world, we won't be storing data in our files at all. This is what databases are for. Instead, our Angular app makes requests to web servers which go and fetch the data. We will do that by using the built in Angular service of $http. $http is a service that makes AJAX requests to APIs. With AJAX, Web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. AJAX is super important to web development. Let's remove our data and replace it with an $http request. 
 
 - Remove the data variable from the code so that our service looks like this:
 
@@ -63,7 +63,7 @@ The URL part is our endpoint. Whenever a backend engineer creates a webserver th
 In this case we're just getting raw user data back. 
 
 # Step 2 - Our Controller
-Now that our service is making a real life - grown up GET request our controller needs to grow up a little in order to handle it. 
+Now that our service is making a real life, grown up GET request, our controller needs to grow up a little in order to handle it. 
 
 Here is what our controller currently looks like:
 
@@ -78,7 +78,7 @@ angular.module('userProfiles').controller('MainController', function($scope, mai
 ```
 We are simply setting our users equal to the result of our service's getUsers function. This won't work anymore. If we tried to leave the controller the same, we would end up getting the response from our request without data. The reason why is because when hitting a real API, it takes some time to retrieve the data. While the data is still trying to come back, Angular has already defined $scope.users, and it's defined it without having any data!
 
-What we need to do is implement a promise! A promise will keep Angular from jumping to conclusions. Instead of defning $scope.users ASAP, Angular will wait until the data comes through to define it. 
+What we need to do is implement a promise! A promise will keep Angular from jumping to conclusions. Instead of defining $scope.users ASAP, Angular will wait until the data comes through to define it. 
 
 - Replace the old getUsers method with a new one which has a promise!
 ``` javascript
