@@ -9,19 +9,19 @@ Our service has all this data inside of it:
 ``` javascript
   [
     {
-        "id": 1,
+        "id": 0,
         "first_name": "george",
         "last_name": "bluth",
         "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
     },
     {
-        "id": 2,
+        "id": 1,
         "first_name": "lucille",
         "last_name": "bluth",
         "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
     },
     {
-        "id": 3,
+        "id": 2,
         "first_name": "oscar",
         "last_name": "bluth",
         "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
@@ -29,7 +29,7 @@ Our service has all this data inside of it:
   ]
 ```
 
-In the real world, we won't be storing data in our files at all. This is what databases are for. Instead, our Angular app makes requests to web servers which go and fetch the data. We will do that by using the built in Angular service of $http. $http is a service that makes AJAX requests to APIs. With Ajax, Web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. AJAX is super important to web development. Let's remove our data and replace it with an  request. 
+In the real world, we won't be storing data in our files at all. This is what databases are for. Instead, our Angular app makes requests to web servers which go and fetch the data. We will do that by using the built in Angular service of $http. $http is a service that makes AJAX requests to APIs. With AJAX, Web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. AJAX is super important to web development. Let's remove our data and replace it with an $http request. 
 
 - Remove the data variable from the code so that our service looks like this:
 
