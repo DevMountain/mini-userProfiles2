@@ -63,7 +63,7 @@ The URL part is our endpoint. Whenever a backend engineer creates a webserver th
 In this case we're just getting raw user data back. 
 
 # Step 2 - Our Controller
-Now that our service is making a real life - grown up GET request our controller needs to grow up a little in order to handle it. 
+Now that our service is making a real life, grown up GET request, our controller needs to grow up a little in order to handle it. 
 
 Here is what our controller currently looks like:
 
@@ -78,7 +78,7 @@ angular.module('userProfiles').controller('MainController', function($scope, mai
 ```
 We are simply setting our users equal to the result of our service's getUsers function. This won't work anymore. If we tried to leave the controller the same, we would end up getting the response from our request without data. The reason why is because when hitting a real API, it takes some time to retrieve the data. While the data is still trying to come back, Angular has already defined $scope.users, and it's defined it without having any data!
 
-What we need to do is implement a promise! A promise will keep Angular from jumping to conclusions. Instead of defning $scope.users ASAP, Angular will wait until the data comes through to define it. 
+What we need to do is implement a promise! A promise will keep Angular from jumping to conclusions. Instead of defining $scope.users ASAP, Angular will wait until the data comes through to define it. 
 
 - Replace the old getUsers method with a new one which has a promise!
 ``` javascript
